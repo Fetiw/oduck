@@ -1,0 +1,32 @@
+.date-item {
+  @include adaptive-value('font-size', 4, 2);
+  @include adaptive-value('width', 142, 70);
+  font-family: Pixel-Emulator, sans-serif;
+  background-color: var(--clr-white);
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px var(--clr-black), 2px 2px 0 0 var(--clr-black);
+  position: relative;
+
+  @include breakpoint('lg') {
+    box-shadow: var(--block-shadow);
+  }
+
+  &__time {
+    @include adaptive-value('font-size', 42, 21);
+    color: var(--clr-blue);
+    filter: drop-shadow(1.5px 1.5px 0 var(--clr-black));
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+
+    @include breakpoint('lg') {
+      filter: drop-shadow(3px 3px 0px var(--clr-black));
+    }
+  }
+
+  &__name {
+    @include adaptive-value('font-size', 22, 11);
+  }
+}

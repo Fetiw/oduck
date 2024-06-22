@@ -1,0 +1,47 @@
+.btn {
+  --btn-bg: var(--clr-blue-dark);
+  --btn-clr: var(--clr-white);
+  --btn-clr-hover: var(--clr-black);
+
+  &--white {
+    --btn-bg: var(--clr-white);
+    --btn-clr: var(--clr-black);
+    --btn-clr-hover: var(--clr-blue-dark);
+  }
+
+  font-family: Pixel-Emulator, sans-serif;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  border-radius: 4px;
+  background-color: var(--btn-bg);
+  color: var(--btn-clr);
+  font-size: 22px;
+  line-height: 1;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  padding-inline: 26px;
+  border: none;
+  box-shadow: inset 0 0 0 1px var(--clr-black), 4px 4px 0 0 var(--clr-black);
+  text-decoration: none;
+
+  svg {
+    width: 32px;
+    aspect-ratio: 1;
+  }
+
+  @include breakpoint('md') {
+    min-width: 220px;
+  }
+
+  @media (hover: hover) {
+    cursor: pointer;
+    transition: box-shadow var(--transition), color var(--transition);
+
+    &:hover {
+      color: var(--btn-clr-hover);
+      box-shadow: inset 0 0 0 1px var(--clr-black), 2px 2px 0 0 var(--clr-black);
+    }
+  }
+}

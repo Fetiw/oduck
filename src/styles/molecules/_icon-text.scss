@@ -1,0 +1,14 @@
+.icon-text {
+  display: flex;
+  gap: 16px;
+
+  &__icon {
+    @include adaptive-value('width', 60, 40);
+    aspect-ratio: 1;
+    flex: none;
+  }
+
+  b {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,86 @@
+.slide-buy {
+  padding: 22px 20% 80px 22px;
+  position: relative;
+  height: 100%;
+
+  &::before {
+    --clip: 2px;
+    --clip-2: calc(100% - var(--clip));
+
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 10px;
+    top: 10px;
+    background-color: var(--clr-black);
+    clip-path: polygon(0% var(--clip), var(--clip) var(--clip), var(--clip) 0%, var(--clip-2) 0%, var(--clip-2) var(--clip), 100% var(--clip), 100% var(--clip-2), var(--clip-2) var(--clip-2), var(--clip-2) 100%, var(--clip) 100%, var(--clip) var(--clip-2), 0% var(--clip-2));
+  }
+
+  &__wrapper {
+    &::after,
+    &::before {
+      --clip: 2px;
+      --clip-2: calc(100% - var(--clip));
+
+      content: '';
+      position: absolute;
+      clip-path: polygon(0% var(--clip), var(--clip) var(--clip), var(--clip) 0%, var(--clip-2) 0%, var(--clip-2) var(--clip), 100% var(--clip), 100% var(--clip-2), var(--clip-2) var(--clip-2), var(--clip-2) 100%, var(--clip) 100%, var(--clip) var(--clip-2), 0% var(--clip-2));
+    }
+
+    &::after {
+      z-index: -1;
+      inset: 2px;
+      background: var(--clr-onahau);
+    }
+
+    &::before {
+      inset: 0;
+      z-index: -2;
+      background: var(--clr-black);
+    }
+  }
+
+  &__icon {
+    width: 6px;
+    aspect-ratio: 1;
+    position: absolute;
+
+    &--1 {
+      top: 3px;
+      left: 3px;
+    }
+
+    &--2 {
+      top: 3px;
+      right: 3px;
+    }
+
+    &--3 {
+      right: 3px;
+      bottom: 3px;
+    }
+
+    &--4 {
+      left: 3px;
+      bottom: 3px;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 30, 24);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__picture {
+    @include adaptive-value('max-height', 80, 54);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,30 @@
+.block-copy {
+  background-color: var(--clr-white);
+  box-shadow: var(--block-shadow);
+  padding: 24px;
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px 50px;
+
+  @include breakpoint('md') {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__content {
+    @include adaptive-value('font-size', 28, 24);
+    text-align: center;
+    font-weight: 700;
+
+    @include breakpoint('md') {
+      text-align: left;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

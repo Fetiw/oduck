@@ -1,0 +1,41 @@
+.social {
+  --social-width: 40px;
+  --social-radius: 12px;
+  --social-clr: var(--clr-black);
+  --social-clr-hover: var(--clr-blue-dark);
+  --social-bg: var(--clr-white);
+
+  width: var(--social-width);
+  background-color: var(--social-bg);
+  border-radius: var(--social-radius);
+  color: var(--social-clr);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &--small {
+    --social-width: 32px;
+    --social-radius: 9px;
+  }
+
+  &--dark {
+    --social-clr: var(--clr-white);
+    --social-bg: var(--clr-brown-dark);
+    --social-bg-hover: var(--clr-blue-dark);
+  }
+
+  svg {
+    width: 80%;
+    aspect-ratio: 1;
+  }
+
+  @media (hover: hover) {
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--social-clr-hover);
+    }
+  }
+}

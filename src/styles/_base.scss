@@ -1,0 +1,124 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html {
+  display: flex;
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  min-height: 100%;
+
+  @include breakpoint('lg') {
+    height: 100%;
+  }
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+svg {
+  transition: fill 404ms var(--transition), stroke 404ms var(--transition);
+}
+
+button {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --h-header: 66px;
+  --page-space: 16px;
+  --clr-black: #000000;
+  --clr-white: #FFFFFF;
+  --clr-blue: #4CB7FA;
+  --clr-blue-dark: #148DD9;
+  --clr-malibu: #54BAF6;
+  --clr-malibu-two: #81D9F9;
+  --clr-prussian: #00295B;
+  --clr-onahau: #D1F3FF;
+  --clr-green: #7DD435;
+  --clr-brown: #764B30;
+  --clr-brown-dark: #482E1E;
+  --block-shadow: inset 0 0 0 2px var(--clr-black), 4px 4px 0 0 var(--clr-black);
+  --block-shadow-small: inset 0 0 0 1px var(--clr-black), 2px 2px 0 0 var(--clr-black);
+  --transition: 300ms linear;
+
+  @include breakpoint('lg') {
+    --h-header: 82px;
+    --page-space: 60px;
+  }
+
+  @include breakpoint('xl') {
+    --page-space: 96px;
+  }
+}
+
+html {
+  background-color: theme('colors.black');
+}
+
+body {
+  @include adaptive-value('font-size', 22, 18);
+  display: grid;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: Ligconsolata, serif;
+  grid-template-rows: 1fr auto;
+  color: var(--clr-black);
+}
+
+.container {
+  --w-container: #{$maxWidthContainer}px;
+
+  padding-inline: var(--page-space);
+  display: grid;
+  align-items: flex-start;
+  overflow-x: clip;
+
+  @include breakpoint('xl') {
+    width: 100%;
+    padding-inline: calc(50vw - (var(--w-container) / 2) + var(--page-space));
+  }
+}

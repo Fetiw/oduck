@@ -1,0 +1,36 @@
+.section-banner {
+  padding-top: calc(var(--h-header) + 50px);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #009ED9 0%, var(--clr-malibu-two) 100%);
+  position: relative;
+
+  @include breakpoint('lg') {
+    padding-top: calc(var(--h-header) + 130px);
+    padding-bottom: 160px;
+  }
+
+  &__main {
+    @include adaptive-value('gap', 32, 24);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    max-width: 480px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 445px;
+  }
+}

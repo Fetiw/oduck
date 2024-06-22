@@ -1,0 +1,33 @@
+.section-why {
+  background-color: var(--clr-malibu-two);
+
+  &__wrapper {
+    @include adaptive-value('padding', 56, 24);
+    background-color: var(--clr-white);
+    display: grid;
+    row-gap: 32px;
+    box-shadow: var(--block-shadow);
+
+    @include breakpoint('lg') {
+      @include adaptive-value('column-gap', 92, 32);
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__content {
+    @include adaptive-value('gap', 32, 24);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include breakpoint('lg') {
+      max-width: 470px;
+      width: 100%;
+    }
+  }
+}

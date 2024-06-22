@@ -1,0 +1,22 @@
+.h1, .h2 {
+  line-height: 1.2;
+  font-family: Pixel-Emulator, sans-serif;
+
+  &--white {
+    color: var(--clr-white);
+    filter: drop-shadow(0px 4px 0 var(--clr-black));
+    text-shadow: 0 2px 0 var(--clr-black), 2px 2px 0 var(--clr-black), 2px -2px 0 var(--clr-black), -2px -2px 0 var(--clr-black);
+  }
+}
+
+.h1 {
+  @include adaptive-value('font-size', 56, 36);
+}
+
+.h2 {
+  @include adaptive-value('font-size', 42, 28);
+}
+
+b {
+  font-weight: 700;
+}

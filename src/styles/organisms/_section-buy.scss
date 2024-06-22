@@ -1,0 +1,11 @@
+.section-buy {
+  @include adaptive-value('gap', 55, 24);
+  display: grid;
+  background-color: var(--clr-malibu-two);
+
+  &__content {
+    @include adaptive-value('gap', 32, 24);
+    display: grid;
+    max-width: 1000px;
+  }
+}
